@@ -10,6 +10,19 @@ public class Tests
     }
 
     [Test]
+    public void TestMarkdownTable()
+    {
+        var table = new Table(
+            ["Test1", "Test2", "Test3"],
+            [
+                ["Value1", "Value2", "Value3"]
+            ]
+        );
+        Console.WriteLine(table.BuildMarkdown());
+//        Assert.That(header.BuildMarkdown(), Is.EqualTo("# Test\n"));
+    }
+
+    [Test]
     public void Test1()
     {
         var header = new Header(HeaderLevel.H1, "Test");
@@ -50,11 +63,14 @@ public class Tests
 
     public record Ex(string Text, string Title);
 
+    [Test]
     public void Test5()
     {
         var x = new List<Ex>(){
-            new Ex("Test", "Tep")
+            new Ex("Test", "Tep"),
+            new Ex("Test2", "Tep2")
         };
         var y = Markdown.Table.From(x);
+        Console.WriteLine(y.BuildMarkdown());
     }
 }
