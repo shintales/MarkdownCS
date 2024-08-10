@@ -23,4 +23,6 @@ public abstract class AddableBase
     }
 
     public AddableBase Add(string markdown) => Add(new Text(markdown));
+
+    public void Clear() => Items.Clear();
 }
