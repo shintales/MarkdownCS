@@ -70,7 +70,7 @@ public class Tests
             new Ex("Test", "Tep"),
             new Ex("Test2", "Tep2")
         };
-        var y = Markdown.Table.From(x);
+        var y = Markdown.Table.From(x, title: "Hello World Plz");
         Console.WriteLine(y.BuildMarkdown());
     }
 }
